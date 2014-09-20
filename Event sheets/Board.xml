@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Board</name>
+    <events>
+        <event-block sid="2760386517480382">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="8317497461022374" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Mole</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8767031554489476" type="Mole" />
+                <action id="-3" name="Create object" sid="4087429160804646" type="System">
+                    <param id="0" name="Object to create">Explosion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Mole.X</param>
+                    <param id="3" name="Y">Mole.Y</param>
+                </action>
+                <action id="0" name="Call function" sid="4281301654551858" type="Function">
+                    <param id="0" name="Name">&quot;createMole&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9620635939659204">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9493922754493738" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="1558375528583502" type="Function">
+                    <param id="0" name="Name">&quot;createMole&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4221664654777751">
+            <conditions>
+                <condition id="0" name="On function" sid="9829745820213349" type="Function">
+                    <param id="0" name="Name">&quot;createMole&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4138281257736445" type="System">
+                    <param id="0" name="Object to create">Mole</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(20, (ViewportRight(0) - 20))</param>
+                    <param id="3" name="Y">random(20, (ViewportBottom(0) - 20))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2319245639283951">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3396105854904999" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="2530623032495478" type="Function">
+                    <param id="0" name="Name">&quot;createMole&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6928770811600021">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="599490502332172" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="6826120271363441" type="Mole">
+                    <param id="0" name="Instance variable">Timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6925845358796547">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3790583879082209" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="3158508893878363" type="Mole">
+                    <param id="0" name="Instance variable">Timer</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7944469261532606" type="Mole" />
+                <action id="-3" name="Create object" sid="9110743755281732" type="System">
+                    <param id="0" name="Object to create">Explosion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Mole.X</param>
+                    <param id="3" name="Y">Mole.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
