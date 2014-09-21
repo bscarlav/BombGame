@@ -3,38 +3,58 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Board</name>
     <events>
+        <variable constant="0" name="HighScore" sid="6706446581635876" static="0" type="number">0</variable>
+        <variable constant="0" name="Score" sid="5101151663587521" static="0" type="number">0</variable>
+        <variable constant="0" name="AnimationSpeed" sid="7438101953170405" static="0" type="number">2</variable>
+        <variable constant="0" name="Timer" sid="6541808028601879" static="0" type="number">0</variable>
+        <variable constant="0" name="GameOver" sid="1642536406492016" static="0" type="number">0</variable>
         <event-block sid="2760386517480382">
             <conditions>
                 <condition id="6" name="On object clicked" sid="8317497461022374" type="Mouse">
                     <param id="0" name="Mouse button">0</param>
                     <param id="1" name="Click type">0</param>
-                    <param id="2" name="Object clicked">Mole</param>
+                    <param id="2" name="Object clicked">Bomb</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="960580344389263" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="8767031554489476" type="Mole" />
-                <action id="-3" name="Create object" sid="4087429160804646" type="System">
-                    <param id="0" name="Object to create">Explosion</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">Mole.X</param>
-                    <param id="3" name="Y">Mole.Y</param>
-                </action>
-                <action id="0" name="Call function" sid="4281301654551858" type="Function">
-                    <param id="0" name="Name">&quot;createMole&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
+                <action id="-9" name="Destroy" sid="8767031554489476" type="Bomb" />
+            </actions>
+        </event-block>
+        <event-block sid="2446548133000714">
+            <conditions>
+                <condition id="17" name="On tap object" sid="4850351282406138" type="Touch">
+                    <param id="0" name="Object">Bomb</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1564886342665342" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6289531339533582" type="Bomb" />
             </actions>
         </event-block>
         <event-block sid="9620635939659204">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="9493922754493738" type="System">
-                    <param id="0" name="Interval (seconds)">5</param>
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7442176877277697" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="1558375528583502" type="Function">
-                    <param id="0" name="Name">&quot;createMole&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
+                <action id="-10" name="Add to" sid="5536235278157994" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
@@ -46,54 +66,211 @@
             </conditions>
             <actions>
                 <action id="-3" name="Create object" sid="4138281257736445" type="System">
-                    <param id="0" name="Object to create">Mole</param>
+                    <param id="0" name="Object to create">Bomb</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">random(20, (ViewportRight(0) - 20))</param>
-                    <param id="3" name="Y">random(20, (ViewportBottom(0) - 20))</param>
+                    <param id="2" name="X">random(50, (ViewportRight(0) - 50))</param>
+                    <param id="3" name="Y">random(50, (ViewportBottom(0) - 50))</param>
+                </action>
+                <action id="6" name="Set speed" sid="333077877358448" type="Bomb">
+                    <param id="0" name="Speed">AnimationSpeed</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="2319245639283951">
+        <event-block sid="1467001917358648">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="3396105854904999" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="2530623032495478" type="Function">
-                    <param id="0" name="Name">&quot;createMole&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6928770811600021">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="599490502332172" type="System">
-                    <param id="0" name="Interval (seconds)">1</param>
+                <condition id="4" name="On finished" sid="9493494502728325" type="Bomb">
+                    <param id="0" name="Animation">&quot;Fill&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-12" name="Subtract from" sid="6826120271363441" type="Mole">
-                    <param id="0" name="Instance variable">Timer</param>
+                <action id="-9" name="Destroy" sid="6494537004541887" type="Bomb" />
+                <action id="-3" name="Create object" sid="8914300689145912" type="System">
+                    <param id="0" name="Object to create">Explosion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Bomb.X</param>
+                    <param id="3" name="Y">Bomb.Y</param>
+                </action>
+                <action id="-9" name="Set value" sid="5497451161835792" type="System">
+                    <param id="0" name="Variable">GameOver</param>
                     <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="9360550724108578" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Play" sid="9180461237632415" type="Audio">
+                    <param id="0" name="Audio file">explosion</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="3572903251637931" type="System">
+                    <param id="0" name="Variable">Paused</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="672305133403877" type="System">
+                    <param id="0" name="Seconds">0.9</param>
+                </action>
+                <action id="-9" name="Set value" sid="8414542849543429" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5020716868048602" type="System">
+                    <param id="0" name="Layout">GameOver</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="6925845358796547">
+        <event-block sid="6193297020474271">
             <conditions>
-                <condition id="-1" name="Every tick" sid="3790583879082209" type="System" />
-                <condition id="-7" name="Compare instance variable" sid="3158508893878363" type="Mole">
-                    <param id="0" name="Instance variable">Timer</param>
-                    <param id="1" name="Comparison">3</param>
+                <condition id="-1" name="Every tick" sid="4549921404873246" type="System" />
+                <condition id="-14" name="Compare variable" sid="7354511924982877" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6689970747987731" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="7944469261532606" type="Mole" />
-                <action id="-3" name="Create object" sid="9110743755281732" type="System">
-                    <param id="0" name="Object to create">Explosion</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">Mole.X</param>
-                    <param id="3" name="Y">Mole.Y</param>
+                <action id="0" name="Call function" sid="2219996573173852" type="Function">
+                    <param id="0" name="Name">&quot;createMole&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="-9" name="Set value" sid="1766469028143002" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1832325798197189">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6214013097656696" type="System">
+                    <param id="0" name="Interval (seconds)">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="4362280613453191" type="System">
+                    <param id="0" name="Variable">AnimationSpeed</param>
+                    <param id="1" name="Value">0.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6199583142511465">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1419921063754651" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2821130140086509" type="Score">
+                    <param id="0" name="Text">Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3875182757451627">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3563258363628422" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1811441372667358" type="System">
+                    <param id="0" name="Variable">HighScore</param>
+                    <param id="1" name="Value">int(Storage.LocalValue(&quot;HighScore&quot;))</param>
+                </action>
+                <action id="5" name="Set web font" sid="9762383566663289" type="GameOver">
+                    <param id="0" name="Family name">&quot;molotregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="7668983571836005" type="Score">
+                    <param id="0" name="Family name">&quot;molotregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3781354195470223">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4434044213977798" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2850446651523107" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">HighScore</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7126295776129822" type="System">
+                    <param id="0" name="Variable">HighScore</param>
+                    <param id="1" name="Value">Score</param>
+                </action>
+                <action id="0" name="Set local value" sid="3911893166301229" type="Storage">
+                    <param id="0" name="Key">&quot;HighScore&quot;</param>
+                    <param id="1" name="Value">str(HighScore)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8646336546325512">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3757378670415578" type="System">
+                    <param id="0" name="Variable">Paused</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="7302842057430756" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="669872276654857" type="System">
+                    <param id="0" name="Variable">Paused</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5177133709709603">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="6316759805338496" type="Bomb" />
+                <condition id="-14" name="Compare variable" sid="9250671824155447" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="7101816532061493" type="Function">
+                    <param id="0" name="Name">&quot;createMole&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-10" name="Add to" sid="117438092521198" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-24" name="Move to top" sid="8384877383453719" type="Score" />
+                <action id="-15" name="Set visible" sid="2269640858128504" type="Score">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" sid="2312066131079111" type="Score" />
+            </actions>
+        </event-block>
+        <event-block sid="2018571680159343">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7168155519700369" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="970259184339165" type="System">
+                    <param id="0" name="Object">Bomb</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2126848950227419" type="Bomb" />
             </actions>
         </event-block>
     </events>

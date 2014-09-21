@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Bomb Tapper</name>
+    <description>Tap the bombs!</description>
+    <version>1.0.0.0</version>
+    <author>SomethingSoft</author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.somethingsoft.bombtapper</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>17800</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Scirra.com" id="win8" version="1">Windows 8</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>640</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Board</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Portrait</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder expanded="1">
+        <object-type name="Mouse" sid="4035858493649853">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Touch" sid="3854976573041656">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Function" sid="8752592836630237">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Explosion" sid="7831757655884197">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="Bomb" sid="8911081916799028">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="12" loop="0" name="Fill" pingpong="0" repeatcount="1" repeatto="0" sid="8905818603559828" speed="2">
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368" original-source="C:\Users\Blake\Downloads\bomb.png">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.57" hotspotY="0.447368">
+                        <collision-poly>
+                            <point x="0.9943" y="0.789398" />
+                            <point x="0.755797" y="0.989111" />
+                            <point x="0.39971" y="0.99068" />
+                            <point x="0.156208" y="0.783452" />
+                            <point x="0.153273" y="0.471718" />
+                            <point x="0.404614" y="0.219374" />
+                            <point x="0.757645" y="0.210829" />
+                            <point x="0.993418" y="0.486577" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GameOver" sid="6345512353044896">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Audio" sid="1211635120190736">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Score" sid="1702525423877243">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Fade" sid="412302478462986">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Windows8" sid="2284303782602811">
+            <plugin id="win8" />
+        </object-type>
+        <object-type name="Storage" sid="4606560113024709">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="HighScore" sid="186575759241739">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="HighScoreValue" sid="7693405198449198">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Start" sid="5295309631911267">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="TextBox" sid="224577038122683">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Background" sid="1953590656436671">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7889924369994836" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Blake\Downloads\bg.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Title" sid="3783095787847035">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder expanded="1">
+        <layout>Board.xml</layout>
+        <layout>GameOver.xml</layout>
+        <layout>Title.xml</layout>
+    </layout-folder>
+    <event-folder expanded="1">
+        <event-sheet>Board.xml</event-sheet>
+        <event-sheet>GameOver.xml</event-sheet>
+        <event-sheet>Title.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="1" />
+        <global-instance type="Touch" uid="2">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="3" />
+        <global-instance type="Audio" uid="6">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Windows8" uid="9">
+            <properties>
+                <test-mode>Yes</test-mode>
+                <about-setting>Yes</about-setting>
+                <support-setting>Yes</support-setting>
+                <privacy-setting>Yes</privacy-setting>
+            </properties>
+        </global-instance>
+        <global-instance type="Storage" uid="8" />
+    </global-instances>
+    <sounds-folder expanded="1">
+        <file name="explosion.ogg" />
+    </sounds-folder>
+    <music-folder expanded="1" />
+    <files-folder expanded="1">
+        <file-folder expanded="0" name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file name="molot-webfont.eot" />
+        <file name="molot-webfont.svg" />
+        <file name="molot-webfont.woff" />
+        <file name="stylesheet.css" />
+        <file name="bg2.jpg" />
+    </files-folder>
+</c2project>

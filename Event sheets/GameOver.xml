@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameOver</name>
+    <events>
+        <variable constant="0" name="Paused" sid="8256415182915469" static="0" type="number">1</variable>
+        <event-block sid="1956064662552753">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="799045078417488" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="4629160951660705" type="GameOver">
+                    <param id="0" name="Family name">&quot;molotregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="2515109724468527" type="HighScore">
+                    <param id="0" name="Family name">&quot;molotregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="8268334258428927" type="HighScoreValue">
+                    <param id="0" name="Family name">&quot;molotregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="1483610062823779" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="6678827262095997" type="Background" />
+                <action id="0" name="Set text" sid="975050583228738" type="HighScoreValue">
+                    <param id="0" name="Text">HighScore</param>
+                </action>
+                <action id="-16" name="Wait" sid="8939526105255029" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="7177315280845591" type="System">
+                    <param id="0" name="Variable">Paused</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="875906377560046" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="323061310177187">
+            <conditions>
+                <condition id="1" name="On any click" sid="6985988343702279" type="Mouse" />
+                <condition id="-14" name="Compare variable" sid="7595148343748562" type="System">
+                    <param id="0" name="Variable">Paused</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9614818996556858" type="System">
+                    <param id="0" name="Layout">Board</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3280950822128381">
+            <conditions>
+                <condition id="14" name="On tap" sid="450419257633518" type="Touch" />
+                <condition id="-14" name="Compare variable" sid="782401847801124" type="System">
+                    <param id="0" name="Variable">Paused</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4442222959866487" type="System">
+                    <param id="0" name="Layout">Board</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
