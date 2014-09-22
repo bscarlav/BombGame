@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>Bomb Tapper</name>
-    <description>Tap the bombs!</description>
+    <name>Time Bomb Tapper</name>
+    <description>Tap the bombs before they explode!</description>
     <version>1.0.0.0</version>
     <author>SomethingSoft</author>
     <author-email></author-email>
@@ -35,7 +35,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <first-layout>Board</first-layout>
+    <first-layout>Title</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>

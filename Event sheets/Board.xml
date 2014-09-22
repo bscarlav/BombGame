@@ -83,16 +83,16 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-9" name="Set value" sid="5497451161835792" type="System">
+                    <param id="0" name="Variable">GameOver</param>
+                    <param id="1" name="Value">1</param>
+                </action>
                 <action id="-9" name="Destroy" sid="6494537004541887" type="Bomb" />
                 <action id="-3" name="Create object" sid="8914300689145912" type="System">
                     <param id="0" name="Object to create">Explosion</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="X">Bomb.X</param>
                     <param id="3" name="Y">Bomb.Y</param>
-                </action>
-                <action id="-9" name="Set value" sid="5497451161835792" type="System">
-                    <param id="0" name="Variable">GameOver</param>
-                    <param id="1" name="Value">1</param>
                 </action>
                 <action id="-9" name="Set value" sid="9360550724108578" type="System">
                     <param id="0" name="Variable">Timer</param>
